@@ -1,0 +1,14 @@
+{
+  "name": "til-labs-wdcs",
+  "version": "1.0.0",
+  "description": "Collection of Tableau Web Data Connectors for The Information Lab Labs",
+  "author": "Craig Bloodworth, The Information Lab",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "micro": "^9.3.3",
+    "mongoose": "^5.3.15"
+  }
+}

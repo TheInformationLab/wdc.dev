@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    const colsSchema = [{
+      id: 'wdc',
+      alias: 'WDC Name',
+      dataType: tableau.dataTypeEnum.string,
+    }, {
+      id: 'method',
+      alias: 'Method',
+      dataType: tableau.dataTypeEnum.string,
+    }, {
+      id: 'responseCode',
+      alias: 'Response Code',
+      dataType: tableau.dataTypeEnum.int,
+    }, {
+      id: 'level1',
+      alias: 'Endpoint Level 1',
+      dataType: tableau.dataTypeEnum.string,
+    }, {
+      id: 'level2',
+      alias: 'Endpoint Level 2',
+      dataType: tableau.dataTypeEnum.string,
+    }, {
+      id: 'datetime',
+      alias: 'Hour',
+      dataType: tableau.dataTypeEnum.datetime,
+    }, {
+      id: 'count',
+      alias: 'Count',
+      dataType: tableau.dataTypeEnum.int,
+    }];
+    const tableSchema = {
+      id: 'apiHealth',
+      alias: 'WDC API Health',
+      columns: colsSchema,
+    };
+
+    const schema = {
+      tables: [
+        tableSchema
+      ],
+    };
+
+    var myConnector = tableau.makeConnector();
+
+    myConnector.init = function(initCallback) {
+      tableau.connectionName = 'wdc.dev Health';
+      tableau.submit()
+      initCallback();
+    };
+
+    myConnector.getSchema = function (schemaCallback) {
+      schemaCallback(schema.tables);
+    };
+
+    myConnector.getData = function (table, doneCallback) {
+      $.get('/api/health', function(response) {
+          table.appendRows(response);
+          doneCallback();
+        });
+    };
+
+    tableau.registerConnector(myConnector);
+
+    </script>
+    <title>Tableau Web Data Connector Gallery by The Information Lab</title>
+  </head>
+  <body>
+  </body>
+</html>

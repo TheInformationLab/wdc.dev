@@ -1,0 +1,76 @@
+.view {
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+
+html, body, header, .view {
+    /* height: 100%; */
+}
+
+.splash {
+    background: url(../../../assets/img/frontSplash.jpg) no-repeat center center;
+    background-size: cover;
+    height: 300px;
+}
+
+.view .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.rgba-orange-light, .rgba-orange-light:after {
+    background-color: rgba(255, 152, 0, 0.3);
+}
+
+.white-text {
+    color: #fff !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+.headerText h2 {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 10px 0;
+}
+
+.headerText h3 {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 10px 0;
+}
+
+.headerText h5 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 10px 0;
+}
