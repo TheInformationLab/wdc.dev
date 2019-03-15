@@ -41,7 +41,7 @@ class App extends Component {
       id: 'eventbrite',
       name: 'Eventbrite',
       image: 'eventbrite.png',
-      url: 'https://eventrbite.wdc.dev',
+      url: 'https://eventbrite.wdc.dev',
       description: 'Analyse your organisation\'s events & registered attendees',
       downloads: 0,
       views: 0,
